@@ -58,22 +58,10 @@
 ;use them from the previous assignment.) What extend returns should be another 
 ;predicate. The returned predicate should be satisfied exactly by those things 
 ;that are eqv? to x or satisfy pred.
-
-; sorry, I couldn't figure out how to use pmatch in a meaningful ; way for this problem.
 (define extend 
 	(lambda (exp pred)
 		(pmatch exp
 			[`,x (lambda (val) (or (eqv? x val)(pred val)))])))
-			
-;(define extend 
-;	(lambda (exp pred)
-;		(pmatch exp
-;			[`,x (guard(symbol? x)) (lambda (val) 
-;									    (or (eqv? x val)
-;											(pred val)))]
-;		    [`(lambda (,x) ,body)   (extend body pred)]
-;			[`(,rator ,rand)        (and(extend rator pred)
-;									    (extend rand pred))])))
 	
 ;7. Define and test a procedure free? that takes a symbol and a 
 ;lambda-calculus expression and returns #t if that variable occurs free in 
