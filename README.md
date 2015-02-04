@@ -6,3 +6,5 @@
 * call-by-name
 * call-by-need
 * call-by-denotation
+
+*misc_examples.scm:* Examples of small problems and their solutions
